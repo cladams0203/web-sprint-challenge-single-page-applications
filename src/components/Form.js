@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Form(props) {
-  const { handleChange, form, handleSubmit } = props;
+  const { handleChange, form, handleSubmit, disable } = props;
   return (
     <form onSubmit={handleSubmit}>
       <label>
@@ -70,7 +70,9 @@ export default function Form(props) {
           placeholder="special instructions"
         />
       </label>
-      <button type="submit">Place Order</button>
+      <button disabled={disable} type="submit">
+        Place Order
+      </button>
     </form>
   );
 }
