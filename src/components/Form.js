@@ -1,16 +1,21 @@
 import React from "react";
 
 export default function Form(props) {
-  const { handleChange, form } = props;
+  const { handleChange, form, handleSubmit } = props;
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>
         Your Name
-        <input onChange={handleChange} name="name" placeholder="Name" />
+        <input
+          value={form.name}
+          onChange={handleChange}
+          name="name"
+          placeholder="Name"
+        />
       </label>
       <label>
         Pizza Size
-        <select onChange={handleChange} name="size">
+        <select onChange={handleChange} name="size" value={form.size}>
           <option disabled value="">
             Select Size
           </option>
@@ -22,6 +27,7 @@ export default function Form(props) {
       <label>
         Cheese
         <input
+          checked={form.cheese}
           name="cheese"
           onChange={(e) => handleChange(e, true)}
           type="checkbox"
@@ -30,6 +36,7 @@ export default function Form(props) {
       <label>
         Pepperoni
         <input
+          checked={form.pepperoni}
           name="pepperoni"
           onChange={(e) => handleChange(e, true)}
           type="checkbox"
@@ -38,6 +45,7 @@ export default function Form(props) {
       <label>
         Sausage
         <input
+          checked={form.sausage}
           name="sausage"
           onChange={(e) => handleChange(e, true)}
           type="checkbox"
@@ -46,6 +54,7 @@ export default function Form(props) {
       <label>
         Pineapple
         <input
+          checked={form.pineapple}
           name="pineapple"
           onChange={(e) => handleChange(e, true)}
           type="checkbox"
@@ -54,13 +63,14 @@ export default function Form(props) {
       <label>
         Special Cooking Instructions
         <input
+          value={form.special}
           name="special"
           onChange={handleChange}
           type="text"
           placeholder="special instructions"
         />
       </label>
-      <button>Place Order</button>
+      <button type="submit">Place Order</button>
     </form>
   );
 }
