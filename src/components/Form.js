@@ -7,6 +7,7 @@ export default function Form(props) {
       <label>
         Your Name
         <input
+          id="name"
           value={form.name}
           onChange={handleChange}
           name="name"
@@ -27,6 +28,7 @@ export default function Form(props) {
       <label>
         Cheese
         <input
+          id="cheese"
           checked={form.cheese}
           name="cheese"
           onChange={(e) => handleChange(e, true)}
@@ -36,6 +38,7 @@ export default function Form(props) {
       <label>
         Pepperoni
         <input
+          id="pepperoni"
           checked={form.pepperoni}
           name="pepperoni"
           onChange={(e) => handleChange(e, true)}
@@ -45,6 +48,7 @@ export default function Form(props) {
       <label>
         Sausage
         <input
+          id="sausage"
           checked={form.sausage}
           name="sausage"
           onChange={(e) => handleChange(e, true)}
@@ -54,6 +58,7 @@ export default function Form(props) {
       <label>
         Pineapple
         <input
+          id="pineapple"
           checked={form.pineapple}
           name="pineapple"
           onChange={(e) => handleChange(e, true)}
@@ -63,6 +68,7 @@ export default function Form(props) {
       <label>
         Special Cooking Instructions
         <input
+          id="special"
           value={form.special}
           name="special"
           onChange={handleChange}
