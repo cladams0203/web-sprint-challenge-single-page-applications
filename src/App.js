@@ -61,6 +61,7 @@ const App = () => {
       .post("https://reqres.in/api/users", form)
       .then((res) => {
         setOrder(res.data);
+        setForm(initialForm);
         history.push("/confirmation");
       })
       .catch((err) => console.log(err));

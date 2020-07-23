@@ -1,11 +1,17 @@
 import React from "react";
+import { Container, Button } from "./styles";
 
 export default function Form(props) {
   const { handleChange, form, handleSubmit, disable } = props;
   return (
-    <form onSubmit={handleSubmit}>
+    <Container
+      border={"2px solid black"}
+      direction={"column"}
+      as="form"
+      onSubmit={handleSubmit}
+    >
       <label>
-        Your Name
+        Your Name:
         <input
           id="name"
           value={form.name}
@@ -65,20 +71,21 @@ export default function Form(props) {
           type="checkbox"
         />
       </label>
-      <label>
-        Special Cooking Instructions
-        <input
-          id="special"
-          value={form.special}
-          name="special"
-          onChange={handleChange}
-          type="text"
-          placeholder="special instructions"
-        />
-      </label>
-      <button disabled={disable} type="submit">
+
+      <p>Special Cooking Instructions:</p>
+      <input
+        style={{ height: "50px", width: "30%", textAlign: "center" }}
+        id="special"
+        value={form.special}
+        name="special"
+        onChange={handleChange}
+        type="text"
+        placeholder="special instructions"
+      />
+
+      <Button fontSize={"1.5rem"} disabled={disable} type="submit">
         Place Order
-      </button>
-    </form>
+      </Button>
+    </Container>
   );
 }

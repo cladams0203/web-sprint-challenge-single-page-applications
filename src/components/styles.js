@@ -7,7 +7,7 @@ export const Container = styled.div`
   align-items: ${(props) => props.align || "center"};
   width: ${(props) => props.width || "100%"};
   flex-direction: ${(props) => props.direction || "row"};
-  border: 1px solid red;
+  border: ${(props) => props.border || ""};
 `;
 
 export const Button = styled.button`
